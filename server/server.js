@@ -13,11 +13,20 @@ server.on("request", async (req, res) => {
     let urlParamSteamId = url.searchParams.get("steamid");
 
     if (urlParamSteamId != null) {
-        await getOwnedGames(urlParamSteamId);
-        await getUserInfo(urlParamSteamId);
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        console.debug(returnObject);
-        res.end(JSON.stringify(returnObject));
+        try {
+            await getOwnedGames(urlParamSteamId);
+            await getUserInfo(urlParamSteamId);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            console.debug(returnObject);
+            res.end(JSON.stringify(returnObject));
+        } catch (error) {
+            console.error(error);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Internal Server Error" }));
+        }
+    } else {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: "Bad Request: Missing steamid parameter" }));
     }
 
 })
@@ -48,9 +57,14 @@ function getOwnedGames(steamId) {
 
             res.on("end", function (chunk) {
                 var body = Buffer.concat(chunks);
-                let allPlaytime = getAllPlaytimeMins(JSON.parse(body.toString()).response.games);
-                returnObject.playtime = allPlaytime;
-                resolve();
+                try {
+                    let allPlaytime = getAllPlaytimeMins(JSON.parse(body.toString()).response.games);
+                    returnObject.playtime = allPlaytime;
+                    resolve();
+                } catch (error) {
+                    console.error(error);
+                    reject(error);
+                }
             });
 
             res.on("error", function (error) {
