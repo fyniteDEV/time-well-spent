@@ -3,7 +3,6 @@
 
 const config = {
     STEAM_API_KEY: "YOUR_STEAM_API_KEY",
-    TEST_STEAM_ID: "YOUR_TEST_STEAM_ID",
     host: "localhost",
     port: 8000
 };
