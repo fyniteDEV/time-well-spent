@@ -1,14 +1,13 @@
 const config = require("./config.js");
 const http = require("node:http");
 
-
 const server = http.createServer();
 
-let returnText = "";
 let returnObject = {};
+
 // Listen for GET requests asking for info of a given steamId
 server.on("request", async (req, res) => {
-
+    res.setHeader('Access-Control-Allow-Origin', '*');
     const url = new URL(req.url, `http://${config.host}:${config.port}`);
     let urlParamSteamId = url.searchParams.get("steamid");
 
