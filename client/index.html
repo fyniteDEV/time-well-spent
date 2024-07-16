@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Well Spent</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form>
-        <input type="text" name="steamid" id="steamid-input">
-        <input type="button" value="Get" onclick="getUserInfo()">
-    </form>
+    
+    
+    <div id="heading-container">
+        <h1>How much time have you wasted on Steam?</h1>
+        <form>
+            <input type="text" name="steamid" id="steamid-input" placeholder="Your Steam ID or URL">
+            <input type="button" value="Get" id="steamid-btn" onclick="getUserInfo()">
+        </form>
+
+        <div id="profile">
+            <div id="profile-header">
+                <img id="avatar-img">
+                <a href="" id="profile-url">
+                    <p id="persona-name"></p>
+                </a>
+            </div>
+            <p id="playtime"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p id="unspent-playtime">Time available: </p>
+    </footer>
 
     <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F7F5;
+    padding: 20px;
+    color: #1B2838;
+}
+
+
+#heading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+
+form {
+    /* background: #F4F7F5; */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+}
+
+#steamid-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+#steamid-input:focus {
+    border-color: #A54657;
+    outline: none;
+}
+
+#steamid-btn {
+    background-color: #A54657;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#steamid-btn:hover {
+    background-color: #893746;
+}
+
+#profile {
+    display: none;
+    flex-direction: column;
+}
+
+#profile-header {
+    display: flex;
+    align-items: center;
+}
+
+#avatar-img {
+    border-radius: 50%;
+    width: 100px;
+    margin-right: 20px;
+}
+
+#persona-name {
+    font-size: 40px;
+}
+
+a {
+    color: #1B2838;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A54657;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
