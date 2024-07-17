@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Well Spent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-    
+
+
     <div id="heading-container">
         <h1>How much time have you wasted on Steam?</h1>
         <form>
@@ -28,10 +30,94 @@
             <p id="playtime"></p>
         </div>
     </div>
+    
+    <div id="main-content-container">
+        <h2>During this you could've spent your time:</h2>
+
+        <div class="row">
+
+            <!-- MOVIES -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Watching movies</h5>
+                    <img src="img/movie.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">2 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary">Less</a>
+                            <input class="activity-input" type="number" name="" id="" min="0" value="0">
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've watched <span>X</span> movies
+                    </div>
+                </div>
+            </div>
+    
+            <!-- READING -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Reading</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">7 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary">Less</a>
+                            <input class="activity-input" type="number" name="" id="" min="0" value="0">
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've read X books
+                    </div>
+                </div>
+            </div>
+    
+            <!-- WORKOUT -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Getting healthier</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">4 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary">Less</a>
+                            <input class="activity-input" type="number" name="" id="" min="0" value="0">
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've regualarly worked out for <span>X</span> weeks
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Reading asd</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">7 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary">Less</a>
+                            <input class="activity-input" type="number" name="" id="" min="0" value="0">
+                            <a href="#" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've read X books
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p id="unspent-playtime">Time available: </p>
     </footer>
+
+    <!-- Image sources: Pixabay -->
 
     <script src="app.js"></script>
 </body>

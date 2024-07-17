@@ -9,6 +9,7 @@ function getUserInfo() {
             profile = JSON.parse(this.responseText);
 
             document.getElementById("profile").style.display = "flex";
+            document.getElementById("main-content-container").style.display = "block";
             document.getElementsByTagName("footer")[0].style.display = "block";
 
             document.getElementById("avatar-img").src = profile.avatar;
@@ -23,6 +24,11 @@ function getUserInfo() {
     });
 
     let steamId = document.getElementById("steamid-input").value;
+    if (isNaN(steamId)) {
+        let urlSplit = steamId.split("/").filter(element => element !== "");
+        steamId = urlSplit[urlSplit.length - 1];
+    }
+
     xhr.open("GET", "http://127.0.0.1:8000?steamid=" + steamId);
 
     xhr.send();
