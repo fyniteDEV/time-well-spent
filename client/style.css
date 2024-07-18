@@ -51,6 +51,9 @@ form {
 #steamid-btn:hover {
     background-color: #893746;
 }
+#steamid-btn:active {
+    background-color: #A54657;
+}
 
 #profile {
     display: none;
@@ -88,6 +91,12 @@ footer {
     display: none;
 }
 
+footer p {
+    font-size: 23px;
+    padding: 5px;
+    margin: 0;
+}
+
 .btn {
     background-color: #A54657;
     border-color: #A54657;
@@ -95,6 +104,11 @@ footer {
 .btn:hover {
     background-color: #893746;
     border-color: #A54657;
+}
+.btn:active {
+    background-color: #A54657 !important;
+    border-color: #A54657 !important;
+    transition: none;
 }
 
 .activity-input {
@@ -106,4 +120,13 @@ footer {
 
 #main-content-container {
     display: none;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.amount-counter {
+    color: #A54657;
+    font-weight: bold;
 }

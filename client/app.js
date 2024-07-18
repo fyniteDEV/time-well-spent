@@ -8,21 +8,21 @@ function getUserInfo() {
         if (this.readyState === 4) {
             profile = JSON.parse(this.responseText);
 
+            // Unhide elements
             document.getElementById("profile").style.display = "flex";
             document.getElementById("main-content-container").style.display = "block";
             document.getElementsByTagName("footer")[0].style.display = "block";
 
+            // Load in values of the given profile
             document.getElementById("avatar-img").src = profile.avatar;
             document.getElementById("persona-name").innerHTML = profile.personaName;
             document.getElementById("playtime").innerHTML = "All playtime: " + minsToHoursAndMins(profile.playtime);
             document.getElementById("profile-url").href = profile.profileUrl;
-            document.getElementById("unspent-playtime").innerHTML = "Time available: " + minsToHoursAndMins(profile.playtime);
-
-
-            console.log(profile);
+            document.getElementById("unspent-playtime").innerHTML = minsToHoursAndMins(profile.playtime);
         }
     });
 
+    // Get SteamId whether it's the URL or just the ID
     let steamId = document.getElementById("steamid-input").value;
     if (isNaN(steamId)) {
         let urlSplit = steamId.split("/").filter(element => element !== "");
@@ -39,4 +39,28 @@ function minsToHoursAndMins(mins) {
     let minutes = mins % 60;
 
     return `${hours} hours ${minutes} minutes`
+}
+
+function activityAmountChange(changeAmount, minutes, amountCounterId, numberInputId) {
+    let amountSum = parseInt(document.getElementById(amountCounterId).innerHTML);
+    let timeCost = changeAmount * minutes;
+
+    if (amountSum + changeAmount >= 0 && profile.playtime - timeCost > 0) {
+        profile.playtime -= timeCost;
+        amountSum += changeAmount;
+    }
+
+    console.debug(minsToHoursAndMins(profile.playtime));
+
+    document.getElementById(amountCounterId).innerHTML = amountSum;
+    document.getElementById(numberInputId).value = amountSum;
+    document.getElementById("unspent-playtime").innerHTML = minsToHoursAndMins(profile.playtime);
+}
+
+function numInputValueChange(minutes, amountCounterId, numberInputId) {
+    let inputValue = parseInt(document.getElementById(numberInputId).value);
+    let previousValue = parseInt(document.getElementById(amountCounterId).innerHTML);
+    let changeAmount = inputValue - previousValue;
+
+    activityAmountChange(changeAmount, minutes, amountCounterId, numberInputId);
 }
