@@ -36,26 +36,7 @@
 
         <div class="row">
 
-            <!-- MOVIES -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100">
-                    <h5 class="card-header">Watching movies</h5>
-                    <img src="img/reading.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">2 hours</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <a onclick="activityAmountChange(-1, 120, 'amount-movies', 'movies-input')" class="btn btn-primary">Less</a>
-                            <input class="activity-input" id="movies-input" oninput="numInputValueChange(120, 'amount-movies', 'movies-input')" type="number" min="0" value="0" autocomplete="off">
-                            <a onclick="activityAmountChange(1, 120, 'amount-movies', 'movies-input')" class="btn btn-primary">More</a>
-                        </div>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        You could've watched <span id="amount-movies" class="amount-counter">0</span> movie(s)
-                    </div>
-                </div>
-            </div>
-
-            <!-- MOVIES -->
+            <!-- HIKING -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card h-100">
                     <h5 class="card-header">Hiking</h5>
@@ -70,6 +51,25 @@
                     </div>
                     <div class="card-footer text-body-secondary">
                         You could've went on <span id="amount-hiking" class="amount-counter">0</span> hike(s)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VOLUNTEERING -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Volunteering</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">5 Hours / Week</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 300, 'amount-volunteering', 'volunteering-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="volunteering-input" oninput="numInputValueChange(300, 'amount-volunteering', 'volunteering-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 300, 'amount-volunteering', 'volunteering-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've done volunteer work for <span id="amount-volunteering" class="amount-counter">0</span> week(s)
                     </div>
                 </div>
             </div>
@@ -99,11 +99,11 @@
                     <h5 class="card-header">Doing physical activites</h5>
                     <img src="img/reading.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">10 hours / month</p>
+                        <p class="card-text">12 hours / month</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a onclick="activityAmountChange(-1, 600, 'amount-workout', 'workout-input')" class="btn btn-primary">Less</a>
-                            <input class="activity-input" id="workout-input" oninput="numInputValueChange(600, 'amount-workout', 'workout-input')" type="number" min="0" value="0" autocomplete="off">
-                            <a onclick="activityAmountChange(1, 600, 'amount-workout', 'workout-input')" class="btn btn-primary">More</a>
+                            <a onclick="activityAmountChange(-1, 720, 'amount-workout', 'workout-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="workout-input" oninput="numInputValueChange(720, 'amount-workout', 'workout-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 720, 'amount-workout', 'workout-input')" class="btn btn-primary">More</a>
                         </div>
                     </div>
                     <div class="card-footer text-body-secondary">
@@ -112,21 +112,135 @@
                 </div>
             </div>
 
+            <!-- ONLINE COURSE -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Online learning</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">40 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 2400, 'amount-course', 'course-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="course-input" oninput="numInputValueChange(2400, 'amount-course', 'course-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 2400, 'amount-course', 'course-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've finished <span id="amount-course" class="amount-counter">0</span> online course(s)
+                    </div>
+                </div>
+            </div>
+
+            <!-- COOKING -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Learning to cook</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">50 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 3000, 'amount-cooking', 'cooking-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="cooking-input" oninput="numInputValueChange(3000, 'amount-cooking', 'cooking-input')" type="number" min="0" max="1" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 3000, 'amount-cooking', 'cooking-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've learned to cook <span id="amount-cooking" class="amount-counter">0</span> time(s)
+                    </div>
+                </div>
+            </div>
+
             <!-- MARATHON -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card h-100">
-                    <h5 class="card-header">Training for and running a marathon</h5>
+                    <h5 class="card-header">Running the marathon</h5>
                     <img src="img/reading.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">116 hours</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a onclick="activityAmountChange(-1, 116, 'amount-marathon', 'marathon-input')" class="btn btn-primary">Less</a>
-                            <input class="activity-input" id="marathon-input" oninput="numInputValueChange(116, 'amount-marathon', 'marathon-input')" type="number" min="0" value="0" autocomplete="off">
-                            <a onclick="activityAmountChange(1, 116, 'amount-marathon', 'marathon-input')" class="btn btn-primary">More</a>
+                            <a onclick="activityAmountChange(-1, 6960, 'amount-marathon', 'marathon-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="marathon-input" oninput="numInputValueChange(6960, 'amount-marathon', 'marathon-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 6960, 'amount-marathon', 'marathon-input')" class="btn btn-primary">More</a>
                         </div>
                     </div>
                     <div class="card-footer text-body-secondary">
                         You could've trained for and run the marathon <span id="amount-marathon" class="amount-counter">0</span> time(s)
+                    </div>
+                </div>
+            </div>
+
+            <!-- WRITING A NOVEL -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Writing</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">350 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 21000, 'amount-writing', 'writing-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="writing-input" oninput="numInputValueChange(21000, 'amount-writing', 'writing-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 21000, 'amount-writing', 'writing-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've written <span id="amount-writing" class="amount-counter">0</span> novel(s)
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHOTOGRAPHY -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Learning photography</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">400 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 24000, 'amount-photography', 'photography-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="photography-input" oninput="numInputValueChange(24000, 'amount-photography', 'photography-input')" type="number" min="0" max="1" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 24000, 'amount-photography', 'photography-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've learned photography to a level of basic competency <span id="amount-photography" class="amount-counter">0</span> time(s)
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRAMMING -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Learning programming</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">405 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 24300, 'amount-programming', 'programming-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="programming-input" oninput="numInputValueChange(24300, 'amount-programming', 'programming-input')" type="number" min="0" max="1" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 24300, 'amount-programming', 'programming-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've learned programming to a basic/intermediate competency <span id="amount-programming" class="amount-counter">0</span> time(s)
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEARNING AN INSTRUMENT -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <h5 class="card-header">Learning instruments</h5>
+                    <img src="img/reading.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">730 hours</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a onclick="activityAmountChange(-1, 43800, 'amount-instrument', 'writing-input')" class="btn btn-primary">Less</a>
+                            <input class="activity-input" id="instrument-input" oninput="numInputValueChange(43800, 'amount-instrument', 'instrument-input')" type="number" min="0" value="0" autocomplete="off">
+                            <a onclick="activityAmountChange(1, 43800, 'amount-instrument', 'writing-input')" class="btn btn-primary">More</a>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        You could've gotten decent at <span id="amount-instrument" class="amount-counter">0</span> musical instrument(s)
                     </div>
                 </div>
             </div>

@@ -130,3 +130,7 @@ footer p {
     color: #A54657;
     font-weight: bold;
 }
+
+.col-12 {
+    margin-bottom: 30px;
+}
