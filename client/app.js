@@ -19,6 +19,13 @@ function getUserInfo() {
             document.getElementById("playtime").innerHTML = "All playtime: " + minsToHoursAndMins(profile.playtime);
             document.getElementById("profile-url").href = profile.profileUrl;
             document.getElementById("unspent-playtime").innerHTML = minsToHoursAndMins(profile.playtime);
+
+            let inputs = document.getElementsByClassName("activity-input");
+            let counters = document.getElementsByClassName("amount-counter");
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].value = 0;
+                counters[i].innerHTML = "0";
+            }
         }
     });
 
@@ -44,13 +51,14 @@ function minsToHoursAndMins(mins) {
 function activityAmountChange(changeAmount, minutes, amountCounterId, numberInputId) {
     let amountSum = parseInt(document.getElementById(amountCounterId).innerHTML);
     let timeCost = changeAmount * minutes;
+    let numInputMax = document.getElementById(numberInputId).max;
 
     if (amountSum + changeAmount >= 0 && profile.playtime - timeCost > 0) {
-        profile.playtime -= timeCost;
-        amountSum += changeAmount;
+        if (numInputMax == "" || amountSum + changeAmount <= numInputMax) {
+            profile.playtime -= timeCost;
+            amountSum += changeAmount;
+        }
     }
-
-    console.debug(minsToHoursAndMins(profile.playtime));
 
     document.getElementById(amountCounterId).innerHTML = amountSum;
     document.getElementById(numberInputId).value = amountSum;
